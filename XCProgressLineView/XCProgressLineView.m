@@ -74,7 +74,6 @@
     {
         CAShapeLayer *backgroundLayer = [CAShapeLayer layer];
         backgroundLayer.lineWidth   = SELF_HEIGHT;
-        backgroundLayer.strokeColor = self.bgColor.CGColor;
         backgroundLayer.lineCap     = kCALineCapRound;
         backgroundLayer.strokeEnd   = 1;
         backgroundLayer.path        = self.bezierPath.CGPath;
@@ -93,7 +92,6 @@
         CAShapeLayer *strokeLayer = [CAShapeLayer layer];
         strokeLayer.lineWidth   = SELF_HEIGHT;
         strokeLayer.fillColor   = [UIColor clearColor].CGColor;
-        strokeLayer.strokeColor = self.strokeColor.CGColor;
         strokeLayer.lineCap     = kCALineCapRound;
         strokeLayer.path        = self.bezierPath.CGPath;
         
@@ -117,6 +115,8 @@
 
 - (void)startAnimation
 {
+    self.backgroundLayer.strokeColor = self.bgColor.CGColor;
+    self.strokeLayer.strokeColor = self.strokeColor.CGColor;
     self.strokeLayer.strokeEnd   = self.progress;
     
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
@@ -130,22 +130,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

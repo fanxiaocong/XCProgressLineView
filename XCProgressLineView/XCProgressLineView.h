@@ -12,10 +12,10 @@ IB_DESIGNABLE
 @interface XCProgressLineView : UIView
 
 /** 👀 背景颜色（默认为 亮灰色） 👀 */
-@property (weak, nonatomic) IBInspectable UIColor *bgColor;
+@property (strong, nonatomic) IBInspectable UIColor *bgColor;
 
 /** 👀 填充颜色(默认为 橙色) 👀 */
-@property (weak, nonatomic) IBInspectable UIColor *strokeColor;
+@property (strong, nonatomic) IBInspectable UIColor *strokeColor;
 
 /** 👀 进度（0~1，默认为 1） 👀 */
 @property (assign, nonatomic) IBInspectable CGFloat progress;
